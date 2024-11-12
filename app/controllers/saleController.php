@@ -721,7 +721,7 @@
                 $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido registrar la venta, por favor intente nuevamente. Código de error: 001",
+					"texto"=>"No hemos podido asignar el equipo, por favor intente nuevamente. Código de error: 001",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -807,7 +807,7 @@
                 $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido registrar la venta, por favor intente nuevamente. Código de error: 002",
+					"texto"=>"No hemos podido asignar los equipos, por favor intente nuevamente. Código de error: 002",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -856,7 +856,7 @@
                 $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido registrar la venta, por favor intente nuevamente. Código de error: 003",
+					"texto"=>"No hemos podido registrar los equipos, por favor intente nuevamente. Código de error: 003",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -873,8 +873,8 @@
 
             $alerta=[
 				"tipo"=>"recargar",
-				"titulo"=>"¡Venta registrada!",
-				"texto"=>"La venta se registró con éxito en el sistema",
+				"titulo"=>"¡Equipos asignados!",
+				"texto"=>" Se registró con éxito en el sistema",
 				"icono"=>"success"
 			];
 			return json_encode($alerta);
@@ -929,9 +929,9 @@
 		                    <th class="has-text-centered">NRO.</th>
 		                    <th class="has-text-centered">Codigo</th>
 		                    <th class="has-text-centered">Fecha</th>
-		                    <th class="has-text-centered">Cliente</th>
-		                    <th class="has-text-centered">Vendedor</th>
-		                    <th class="has-text-centered">Total</th>
+		                    <th class="has-text-centered">Asignado a</th>
+		                    <th class="has-text-centered">Funcionario Responsable</th>
+		                   
 		                    <th class="has-text-centered">Opciones</th>
 		                </tr>
 		            </thead>
@@ -949,7 +949,7 @@
 							<td>'.date("d-m-Y", strtotime($rows['venta_fecha'])).' '.$rows['venta_hora'].'</td>
 							<td>'.$this->limitarCadena($rows['cliente_nombre'].' '.$rows['cliente_apellido'],30,"...").'</td>
 							<td>'.$this->limitarCadena($rows['usuario_nombre'].' '.$rows['usuario_apellido'],30,"...").'</td>
-							<td>'.MONEDA_SIMBOLO.number_format($rows['venta_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR).' '.MONEDA_NOMBRE.'</td>
+							
 			                <td>
 
 			                	<button type="button" class="button is-link is-outlined is-rounded is-small btn-sale-options" onclick="print_invoice(\''.APP_URL.'app/pdf/invoice.php?code='.$rows['venta_codigo'].'\')" title="Imprimir factura Nro. '.$rows['venta_id'].'" >
@@ -960,7 +960,7 @@
                                     <i class="fas fa-receipt fa-fw"></i>
                                 </button>
 
-			                    <a href="'.APP_URL.'saleDetail/'.$rows['venta_codigo'].'/" class="button is-link is-rounded is-small" title="Informacion de venta Nro. '.$rows['venta_id'].'" >
+			                    <a href="'.APP_URL.'saleDetail/'.$rows['venta_codigo'].'/" class="button is-link is-rounded is-small" title="Informacion de asgnación Nro. '.$rows['venta_id'].'" >
 			                    	<i class="fas fa-shopping-bag fa-fw"></i>
 			                    </a>
 
@@ -969,7 +969,7 @@
 			                		<input type="hidden" name="modulo_venta" value="eliminar_venta">
 			                		<input type="hidden" name="venta_id" value="'.$rows['venta_id'].'">
 
-			                    	<button type="submit" class="button is-danger is-rounded is-small" title="Eliminar venta Nro. '.$rows['venta_id'].'" >
+			                    	<button type="submit" class="button is-danger is-rounded is-small" title="Eliminar asginación Nro. '.$rows['venta_id'].'" >
 			                    		<i class="far fa-trash-alt fa-fw"></i>
 			                    	</button>
 			                    </form>
@@ -1006,7 +1006,7 @@
 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
-				$tabla.='<p class="has-text-right">Mostrando ventas <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+				$tabla.='<p class="has-text-right">Mostrando equipos <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
 
 				$tabla.=$this->paginadorTablas($pagina,$numeroPaginas,$url,7);
 			}

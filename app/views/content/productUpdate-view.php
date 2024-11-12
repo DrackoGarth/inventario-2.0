@@ -50,7 +50,7 @@
 		  	</div>
 		</div>
 		<div class="columns">
-		  	<div class="column">
+		  	<div class="column" >
 		    	<div class="control">
 					<label>Precio de compra <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="producto_precio_compra" value="<?php echo $datos['producto_precio_compra']; ?>" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >

@@ -152,43 +152,43 @@
 		        exit();
             }
 
-            # Comprobando precio de compra del producto #
-           $precio_compra=number_format($precio_compra,MONEDA_DECIMALES,'.','');
-            if($precio_compra<=0){
-				$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El PRECIO DE COMPRA no puede ser menor o igual a 0",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-            }
+        //     # Comprobando precio de compra del producto #
+        //    $precio_compra=number_format($precio_compra,MONEDA_DECIMALES,'.','');
+        //     if($precio_compra<=0){
+		// 		$alerta=[
+		// 			"tipo"=>"simple",
+		// 			"titulo"=>"Ocurrió un error inesperado",
+		// 			"texto"=>"El PRECIO DE COMPRA no puede ser menor o igual a 0",
+		// 			"icono"=>"error"
+		// 		];
+		// 		return json_encode($alerta);
+		//         exit();
+        //     }
 
-            # Comprobando precio de venta del producto #
-            $precio_venta=number_format($precio_venta,MONEDA_DECIMALES,'.','');
-            if($precio_venta<=0){
-                 $alerta=[
-					"tipo"=>"simple",
-				"titulo"=>"Ocurrió un error inesperado",
-				"texto"=>"El PRECIO DE VENTA no puede ser menor o igual a 0",
-				"icono"=>"error"
-				];
-			return json_encode($alerta);
-		       exit();
-			 }
+        //     # Comprobando precio de venta del producto #
+        //     $precio_venta=number_format($precio_venta,MONEDA_DECIMALES,'.','');
+        //     if($precio_venta<=0){
+        //          $alerta=[
+		// 			"tipo"=>"simple",
+		// 		"titulo"=>"Ocurrió un error inesperado",
+		// 		"texto"=>"El PRECIO DE VENTA no puede ser menor o igual a 0",
+		// 		"icono"=>"error"
+		// 		];
+		// 	return json_encode($alerta);
+		//        exit();
+		// 	 }
 
-			# Comprobando precio de compra y venta del producto #
-			if($precio_compra>$precio_venta){
-				$alerta=[
-			 		"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-			 		"texto"=>"El precio de compra del producto no puede ser mayor al precio de venta",
-			 		"icono"=>"error"
-			 	];
-			 	return json_encode($alerta);
-		        exit();
-			 }
+		// 	# Comprobando precio de compra y venta del producto #
+		// 	if($precio_compra>$precio_venta){
+		// 		$alerta=[
+		// 	 		"tipo"=>"simple",
+		// 			"titulo"=>"Ocurrió un error inesperado",
+		// 	 		"texto"=>"El precio de compra del producto no puede ser mayor al precio de venta",
+		// 	 		"icono"=>"error"
+		// 	 	];
+		// 	 	return json_encode($alerta);
+		//         exit();
+		// 	 }
 
 			# Comprobando codigo de producto #
 		    $check_codigo=$this->ejecutarConsulta("SELECT producto_codigo FROM producto WHERE producto_codigo='$codigo'");
@@ -605,7 +605,7 @@
 		    $categoria=$this->limpiarCadena($_POST['producto_categoria']);
 
 		    # Verificando campos obligatorios #
-            if($codigo=="" || $nombre=="" || $precio_compra=="" || $precio_venta=="" || $stock==""){
+            if($codigo=="" || $nombre=="" || $stock==""){
             	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -738,42 +738,42 @@
             }
 
             # Comprobando precio de compra del producto #
-            $precio_compra=number_format($precio_compra,MONEDA_DECIMALES,'.','');
-            if($precio_compra<=0){
-				$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El PRECIO DE COMPRA no puede ser menor o igual a 0",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-            }
+            // $precio_compra=number_format($precio_compra,MONEDA_DECIMALES,'.','');
+            // if($precio_compra<=0){
+			// 	$alerta=[
+			// 		"tipo"=>"simple",
+			// 		"titulo"=>"Ocurrió un error inesperado",
+			// 		"texto"=>"El PRECIO DE COMPRA no puede ser menor o igual a 0",
+			// 		"icono"=>"error"
+			// 	];
+			// 	return json_encode($alerta);
+		    //     exit();
+            // }
 
-            # Comprobando precio de venta del producto #
-            $precio_venta=number_format($precio_venta,MONEDA_DECIMALES,'.','');
-            if($precio_venta<=0){
-                $alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El PRECIO DE VENTA no puede ser menor o igual a 0",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-			}
+            // # Comprobando precio de venta del producto #
+            // $precio_venta=number_format($precio_venta,MONEDA_DECIMALES,'.','');
+            // if($precio_venta<=0){
+            //     $alerta=[
+			// 		"tipo"=>"simple",
+			// 		"titulo"=>"Ocurrió un error inesperado",
+			// 		"texto"=>"El PRECIO DE VENTA no puede ser menor o igual a 0",
+			// 		"icono"=>"error"
+			// 	];
+			// 	return json_encode($alerta);
+		    //     exit();
+			// }
 
-			# Comprobando precio de compra y venta del producto #
-			if($precio_compra>$precio_venta){
-				$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El precio de compra del producto no puede ser mayor al precio de venta",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-			}
+			// # Comprobando precio de compra y venta del producto #
+			// if($precio_compra>$precio_venta){
+			// 	$alerta=[
+			// 		"tipo"=>"simple",
+			// 		"titulo"=>"Ocurrió un error inesperado",
+			// 		"texto"=>"El precio de compra del producto no puede ser mayor al precio de venta",
+			// 		"icono"=>"error"
+			// 	];
+			// 	return json_encode($alerta);
+		    //     exit();
+			// }
 
 			# Comprobando codigo de producto #
 			if($datos['producto_codigo']!=$codigo){
