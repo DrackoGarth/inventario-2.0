@@ -26,7 +26,7 @@
 		    }
 
 		    # Verificando integridad de los datos #
-		    if($this->verificarDatos("[0-9]{1,5}",$numero)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{1,5}",$numero)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -181,9 +181,9 @@
 		        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
 		            <thead>
 		                <tr>
-		                    <th class="has-text-centered">Numero</th>
+		                    <th class="has-text-centered">Piso</th>
 		                    <th class="has-text-centered">Nombre</th>
-		                    <th class="has-text-centered">Efectivo</th>
+		                   
 		                    <th class="has-text-centered">Actualizar</th>
 		                    <th class="has-text-centered">Eliminar</th>
 		                </tr>
@@ -199,7 +199,7 @@
 						<tr class="has-text-centered" >
 							<td>'.$rows['caja_numero'].'</td>
 							<td>'.$rows['caja_nombre'].'</td>
-							<td>'.$rows['caja_efectivo'].'</td>
+							
 			                <td>
 			                    <a href="'.APP_URL.'cashierUpdate/'.$rows['caja_id'].'/" class="button is-success is-rounded is-small">
 			                    	<i class="fas fa-sync fa-fw"></i>
@@ -247,7 +247,7 @@
 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
-				$tabla.='<p class="has-text-right">Mostrando cajas <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+				$tabla.='<p class="has-text-right">Mostrando Areas <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
 
 				$tabla.=$this->paginadorTablas($pagina,$numeroPaginas,$url,7);
 			}
@@ -361,7 +361,7 @@
 		    $efectivo=$this->limpiarCadena($_POST['caja_efectivo']);
 
 		    # Verificando campos obligatorios #
-		    if($numero=="" || $nombre=="" || $efectivo==""){
+		    if($numero=="" || $nombre==""){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -373,11 +373,11 @@
 		    }
 
 		    # Verificando integridad de los datos #
-		    if($this->verificarDatos("[0-9]{1,5}",$numero)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{1,5}",$numero)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El NUMERO DE CAJA no coincide con el formato solicitado",
+					"texto"=>"El Piso del AREA no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -395,16 +395,16 @@
 		        exit();
 		    }
 
-		    if($this->verificarDatos("[0-9.]{1,25}",$efectivo)){
-		    	$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El EFECTIVO DE CAJA no coincide con el formato solicitado",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-		    }
+		    // if($this->verificarDatos("[0-9.]{1,25}",$efectivo)){
+		    // 	$alerta=[
+			// 		"tipo"=>"simple",
+			// 		"titulo"=>"Ocurrió un error inesperado",
+			// 		"texto"=>"El EFECTIVO DE CAJA no coincide con el formato solicitado",
+			// 		"icono"=>"error"
+			// 	];
+			// 	return json_encode($alerta);
+		    //     exit();
+		    // }
 
 		    # Comprobando numero de caja #
 		    if($datos['caja_numero']!=$numero){
@@ -437,17 +437,17 @@
 		    }
 
 		    # Comprobando que el efectivo sea mayor o igual a 0 #
-			$efectivo=number_format($efectivo,2,'.','');
-			if($efectivo<0){
-				$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No puedes colocar una cantidad de efectivo menor a 0",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-			}
+			// $efectivo=number_format($efectivo,2,'.','');
+			// if($efectivo<0){
+			// 	$alerta=[
+			// 		"tipo"=>"simple",
+			// 		"titulo"=>"Ocurrió un error inesperado",
+			// 		"texto"=>"No puedes colocar una cantidad de efectivo menor a 0",
+			// 		"icono"=>"error"
+			// 	];
+			// 	return json_encode($alerta);
+		    //     exit();
+			// }
 
 			$caja_datos_up=[
 				[

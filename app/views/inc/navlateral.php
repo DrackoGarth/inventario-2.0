@@ -1,3 +1,10 @@
+<?php
+
+include_once 'app\controllers\userController.php';
+use app\controllers\userController;
+$controller = new userController();
+
+?>
 <section class="full-width navLateral scroll" id="navLateral">
 	<div class="full-width navLateral-body">
 		<div class="full-width navLateral-body-logo has-text-centered tittles is-uppercase">
@@ -82,10 +89,10 @@
 						</li>
 					</ul>
 				</li>
-
+			<?php  ?>
 			<li class="full-width divider-menu-h"></li>
-
-				<li class="full-width">
+				<?php //if ($controller->esAdministrador()) {?>
+				<li class="full-width"> 
 					<a href="#" class="full-width btn-subMenu">
 						<div class="navLateral-body-cl">
 							<i class="fas fa-users fa-fw"></i>
@@ -128,8 +135,9 @@
 						</li>
 					</ul>
 				</li>
+				
 				<li class="full-width divider-menu-h"></li>
-
+				<?php // }?>
 				<li class="full-width">
 					<a href="#" class="full-width btn-subMenu">
 						<div class="navLateral-body-cl">

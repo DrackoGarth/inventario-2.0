@@ -27,7 +27,7 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Numero de caja <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="caja_numero" pattern="[0-9]{1,5}" maxlength="5" value="<?php echo $datos['caja_numero']; ?>" required >
+				  	<input class="input" type="text" name="caja_numero" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{1,5}" maxlength="5" value="<?php echo $datos['caja_numero']; ?>" required >
 				</div>
 		  	</div>
 		  	<div class="column">
@@ -36,7 +36,7 @@
 				  	<input class="input" type="text" name="caja_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{3,70}" maxlength="70" value="<?php echo $datos['caja_nombre']; ?>" required >
 				</div>
 		  	</div>
-		  	<div class="column">
+		  	<div class="column" style="display:none;">
 		    	<div class="control">
 					<label>Efectivo en caja <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="caja_efectivo" pattern="[0-9.]{1,25}" maxlength="25" value="<?php echo number_format($datos['caja_efectivo'],2,'.',''); ?>" required >

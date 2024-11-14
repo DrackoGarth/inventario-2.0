@@ -22,26 +22,27 @@
 				  	<input class="input" type="text" name="producto_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,$#\-\/ ]{1,100}" maxlength="100" required >
 				</div>
 		  	</div>
-		</div>
-		<div class="columns">
-		  	<div class="column">
-		    	<div class="control">
-					<label>Precio de compra <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="producto_precio_compra" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
-				</div>
-		  	</div>
-		  	<div class="column">
-		    	<div class="control">
-					<label>Precio de venta <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="producto_precio_venta" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
-				</div>
-		  	</div>
-		  	<div class="column">
+			  <div class="column">
 		    	<div class="control">
 					<label>Stock o existencias <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="producto_stock" pattern="[0-9]{1,22}" maxlength="22" required >
 				</div>
 		  	</div>
+		</div>
+		<div class="columns" style="display: none;">
+		  	<div class="column" >
+		    	<div class="control">
+					<label>Precio de compra <?php echo CAMPO_OBLIGATORIO; ?></label>
+				  	<input class="input" type="text" name="producto_precio_compra" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
+				</div>
+		  	</div>
+		  	<div class="column" style="display: none;">
+		    	<div class="control">
+					<label>Precio de venta <?php echo CAMPO_OBLIGATORIO; ?></label>
+				  	<input class="input" type="text" name="producto_precio_venta" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
+				</div>
+		  	</div>
+
 		</div>
 		<div class="columns">
 		  	<div class="column">
@@ -56,7 +57,7 @@
 				  	<input class="input" type="text" name="producto_modelo" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{1,30}" maxlength="30" >
 				</div>
 		  	</div>
-		  	<div class="column">
+		  	<div class="column" style="display: none;">
 		    	<div class="control">
 					<label>Presentación del producto <?php echo CAMPO_OBLIGATORIO; ?></label><br>
 				  	<div class="select">
@@ -87,7 +88,7 @@
 				</div>
 		  	</div>
 		</div>
-		<div class="columns">
+		<div class="" style=" display: grid; place-items:center; text-align:center;">
 			<div class="column">
 				<label>Foto o imagen del producto</label><br>
 				<div class="file is-small has-name">

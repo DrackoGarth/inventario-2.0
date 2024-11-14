@@ -42,7 +42,11 @@
 		    	<div class="control">
 					<label>Clave <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="password" name="usuario_clave_1" pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100" required >
+					
 				</div>
+				<p class="has-text-grey pt-5">
+            			<small >La clave debe tener minimo 7 carácteres</small>
+       			</p>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">

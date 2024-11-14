@@ -4,6 +4,15 @@
 	use app\models\mainModel;
 
 	class userController extends mainModel{
+		
+		public function esAdministrador() {
+			// Verifica si la sesión está iniciada y si el id del usuario es 1 (administrador)
+			// if (isset($_SESSION['usuario_id']) && $_SESSION['usuario_id'] == 1) {
+			// 	return true;
+			// }
+			// return false;
+		}
+	
 
 		/*----------  Controlador registrar usuario  ----------*/
 		public function registrarUsuarioControlador(){
