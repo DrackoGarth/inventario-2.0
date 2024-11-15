@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `caja` (
   `caja_id` int(5) NOT NULL,
-  `caja_numero` int(5) NOT NULL,
+  `caja_numero` varchar(5) NOT NULL,
   `caja_nombre` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `caja_efectivo` decimal(30,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
