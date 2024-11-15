@@ -5,7 +5,7 @@
 	const APP_SESSION_NAME="POS";
 
 	/*----------  Tipos de documentos  ----------*/
-	const DOCUMENTOS_USUARIOS=["DUI","DNI","Cedula","Licencia","Pasaporte","Otro"];
+	const DOCUMENTOS_USUARIOS=["Cedula","Licencia","Pasaporte","Otro"];
 
 
 	/*----------  Tipos de unidades de productos  ----------*/

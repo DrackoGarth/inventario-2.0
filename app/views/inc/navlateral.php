@@ -52,7 +52,7 @@ $controller = new userController();
 							<i class="fas fa-sitemap fa-fw"></i>
 						</div>
 						<div class="navLateral-body-cr">
-							AREAS
+							GERENCIAS
 						</div>
 						<span class="fas fa-chevron-down"></span>
 					</a>
@@ -63,7 +63,7 @@ $controller = new userController();
 									<i class="fas fa-sitemap fa-fw"></i>
 								</div>
 								<div class="navLateral-body-cr">
-									Nueva Area
+									Nueva Gerencia
 								</div>
 							</a>
 						</li>
@@ -73,7 +73,7 @@ $controller = new userController();
 									<i class="fas fa-clipboard-list fa-fw"></i>
 								</div>
 								<div class="navLateral-body-cr">
-									Lista de Areas
+									Lista de Gerencias
 								</div>
 							</a>
 						</li>
@@ -83,7 +83,7 @@ $controller = new userController();
 									<i class="fas fa-search fa-fw"></i>
 								</div>
 								<div class="navLateral-body-cr">
-									Buscar Areas
+									Buscar Gerencias
 								</div>
 							</a>
 						</li>

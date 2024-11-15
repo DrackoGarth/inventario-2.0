@@ -25,7 +25,7 @@
             }
 
             # Verificando integridad de los datos #
-		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}",$nombre)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{2,50}",$nombre)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -82,7 +82,7 @@
 				$alerta=[
 					"tipo"=>"limpiar",
 					"titulo"=>"Categoría registrada",
-					"texto"=>"La categoría ".$nombre." se registro con exito",
+					"texto"=>"La categoría ".$nombre." se registro con Éxito",
 					"icono"=>"success"
 				];
 			}else{
@@ -315,7 +315,7 @@
             }
 
             # Verificando integridad de los datos #
-		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{4,50}",$nombre)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{2,50}",$nombre)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",

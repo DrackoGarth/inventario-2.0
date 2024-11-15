@@ -175,7 +175,7 @@
                     "venta_detalle_descripcion"=>$campos['producto_nombre']
                 ];
 
-                $_SESSION['alerta_producto_agregado']="Se agrego +1 <strong>".$campos['producto_nombre']."</strong> a la venta. Total en carrito: <strong>$detalle_cantidad</strong>";
+                $_SESSION['alerta_producto_agregado']="Se agrego +1 <strong>".$campos['producto_nombre']."</strong> a la asignación. Total: <strong>$detalle_cantidad</strong>";
             }
 
             $alerta=[
@@ -952,11 +952,11 @@
 							
 			                <td>
 
-			                	<button type="button" class="button is-link is-outlined is-rounded is-small btn-sale-options" onclick="print_invoice(\''.APP_URL.'app/pdf/invoice.php?code='.$rows['venta_codigo'].'\')" title="Imprimir factura Nro. '.$rows['venta_id'].'" >
+			                	<button type="button" class="button is-link is-outlined is-rounded is-small btn-sale-options" onclick="print_invoice(\''.APP_URL.'app/pdf/invoice.php?code='.$rows['venta_codigo'].'\')" title="Imprimir carta Nro. '.$rows['venta_id'].'" >
 	                                <i class="fas fa-file-invoice-dollar fa-fw"></i>
 	                            </button>
 
-                                <button type="button" class="button is-link is-outlined is-rounded is-small btn-sale-options" onclick="print_ticket(\''.APP_URL.'app/pdf/ticket.php?code='.$rows['venta_codigo'].'\')" title="Imprimir ticket Nro. '.$rows['venta_id'].'" >
+                                <button type="button" style="display: none;"  class="button is-link is-outlined is-rounded is-small btn-sale-options" onclick="print_ticket(\''.APP_URL.'app/pdf/ticket.php?code='.$rows['venta_codigo'].'\')" title="Imprimir ticket Nro. '.$rows['venta_id'].'" >
                                     <i class="fas fa-receipt fa-fw"></i>
                                 </button>
 
@@ -1026,7 +1026,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado la venta en el sistema",
+					"texto"=>"No hemos encontrado la asignación en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -1047,7 +1047,7 @@
 		        	$alerta=[
 						"tipo"=>"simple",
 						"titulo"=>"Ocurrió un error inesperado",
-						"texto"=>"No hemos podido eliminar la venta del sistema, por favor intente nuevamente",
+						"texto"=>"No hemos podido eliminar la asignación del sistema, por favor intente nuevamente",
 						"icono"=>"error"
 					];
 					return json_encode($alerta);
@@ -1063,8 +1063,8 @@
 
 		        $alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"Venta eliminada",
-					"texto"=>"La venta ha sido eliminada del sistema correctamente",
+					"titulo"=>"Asignación eliminada",
+					"texto"=>"La asignacón ha sido eliminada del sistema correctamente",
 					"icono"=>"success"
 				];
 
@@ -1072,7 +1072,7 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido eliminar la venta del sistema, por favor intente nuevamente",
+					"texto"=>"No hemos podido eliminar la asignación del sistema, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 		    }

@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-	<h1 class="title">Clientes</h1>
-	<h2 class="subtitle"><i class="fas fa-male fa-fw"></i> &nbsp; Nuevo cliente</h2>
+	<h1 class="title">Funcionarios</h1>
+	<h2 class="subtitle"><i class="fas fa-male fa-fw"></i> &nbsp; Nuevo funcionario</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -26,7 +26,7 @@
 			<div class="column">
 				<div class="control">
 					<label>Numero de documento <?php echo CAMPO_OBLIGATORIO; ?></label>
-					<input class="input" type="text" name="cliente_numero_documento" pattern="[a-zA-Z0-9-]{7,30}" maxlength="30" required>
+					<input class="input" type="text" name="cliente_numero_documento" pattern="[0-9]{7,30}" maxlength="30" required>
 				</div>
 			</div>
 		</div>
@@ -47,15 +47,15 @@
 		<div class="columns">
 			<div class="column">
 				<div class="control">
-					<label>Estado, provincia o departamento <?php echo CAMPO_OBLIGATORIO; ?></label>
+					<label>Gerencia<?php echo CAMPO_OBLIGATORIO; ?></label>  <!--deberiamos poner un select para ahorrar tipado-->
 					<input class="input" type="text" name="cliente_provincia" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,30}" maxlength="30" required>
 				</div>
 			</div>
 			<div class="column">
 				<div class="control">
-					<label>Ciudad o pueblo <?php echo CAMPO_OBLIGATORIO; ?></label>
-					<!-- <input class="input" type="text" name="cliente_ciudad" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,30}" maxlength="30" required> -->
-					<div class="control">
+					<label>Cargo<?php echo CAMPO_OBLIGATORIO; ?></label>
+					<input class="input" type="text" name="cliente_ciudad" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,30}" maxlength="30" required> 
+					<!-- <div class="control">
 					<div class="select">
 					<select name="cliente_nombre">
 						<option value="value1">Value 1</option>
@@ -63,15 +63,15 @@
 						<option value="value3">Value 3</option>
 					</select>
 					</div>
-					</div>
+					</div> -->
 					
 
 				</div>
 			</div>
 			<div class="column">
 				<div class="control">
-					<label>Calle o dirección de casa <?php echo CAMPO_OBLIGATORIO; ?></label>
-					<input class="input" type="text" name="cliente_direccion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{4,70}" maxlength="70" required>
+					<label>Piso<?php echo CAMPO_OBLIGATORIO; ?></label>
+					<input class="input" type="text" name="cliente_direccion" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,12}" maxlength="70" required>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 			<div class="column">
 				<div class="control">
 					<label>Teléfono</label>
-					<input class="input" type="text" name="cliente_telefono" pattern="[0-9()+]{8,20}" maxlength="20">
+					<input class="input" type="text" name="cliente_telefono" pattern="[0-9()+]{4,20}" maxlength="20">
 				</div>
 			</div>
 			<div class="column">

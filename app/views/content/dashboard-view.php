@@ -35,7 +35,7 @@
 			<nav class="level is-mobile">
 			  	<div class="level-item has-text-centered">
 				    <a href="<?php echo APP_URL; ?>cashierList/">
-				      	<p class="heading"><i class="fas fa-cash-register fa-fw"></i> &nbsp; Cajas</p>
+				      	<p class="heading"><i class="fas fa-sitemap fa-fw"></i> &nbsp; Gerencias</p>
 				      	<p class="title"><?php echo $total_cajas->rowCount(); ?></p>
 				    </a>
 			  	</div>
@@ -47,7 +47,7 @@
 			  	</div>
 			  	<div class="level-item has-text-centered">
 				    <a href="<?php echo APP_URL; ?>clientList/">
-				      	<p class="heading"><i class="fas fa-address-book fa-fw"></i> &nbsp; Clientes</p>
+				      	<p class="heading"><i class="fas fa-address-book fa-fw"></i> &nbsp; Funcionarios</p>
 				      	<p class="title"><?php echo $total_clientes->rowCount(); ?></p>
 				    </a>
 			  	</div>
@@ -72,7 +72,7 @@
 			  	</div>
 			  	<div class="level-item has-text-centered">
 			    	<a href="<?php echo APP_URL; ?>saleList/">
-			      		<p class="heading"><i class="fas fa-shopping-cart fa-fw"></i> &nbsp; Ventas</p>
+			      		<p class="heading"><i class="fas fa-laptop fa-fw"></i> &nbsp; Equipos Asignados</p>
 			      		<p class="title"><?php echo $total_ventas->rowCount(); ?></p>
 			    	</a>
 			  	</div>

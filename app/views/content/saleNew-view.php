@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-	<h1 class="title">Ventas</h1>
-	<h2 class="subtitle"><i class="fas fa-cart-plus fa-fw"></i> &nbsp; Nueva venta</h2>
+	<h1 class="title">Asignaciones</h1>
+	<h2 class="subtitle"><i class="fas fa-laptop fa-fw"></i> &nbsp; Nueva asignación</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -49,21 +49,21 @@
                 if(isset($_SESSION['venta_codigo_factura']) && $_SESSION['venta_codigo_factura']!=""){
             ?>
             <div class="notification is-info is-light mb-2 mt-2">
-                <h4 class="has-text-centered has-text-weight-bold">Venta realizada</h4>
-                <p class="has-text-centered mb-2">La venta se realizó con éxito. ¿Que desea hacer a continuación? </p>
+                <h4 class="has-text-centered has-text-weight-bold">Asignación realizada</h4>
+                <p class="has-text-centered mb-2">La asignación se realizó con éxito. ¿Que desea hacer a continuación? </p>
                 <br>
                 <div class="container">
                     <div class="columns">
-                        <div class="column has-text-centered">
+                        <div class="column has-text-centered" style="display: none;">
                             <button type="button" class="button is-link is-light" onclick="print_ticket('<?php echo APP_URL."app/pdf/ticket.php?code=".$_SESSION['venta_codigo_factura']; ?>')" >
                                 <i class="fas fa-receipt fa-2x"></i> &nbsp;
-                                Imprimir ticket de venta
+                                Imprimir ticket de asignación
                             </buttona>
                         </div>
                         <div class="column has-text-centered">
                             <button type="button" class="button is-link is-light" onclick="print_invoice('<?php echo APP_URL."app/pdf/invoice.php?code=".$_SESSION['venta_codigo_factura']; ?>')" >
                                 <i class="fas fa-file-invoice-dollar fa-2x"></i> &nbsp;
-                                Imprimir factura de venta
+                                Imprimir carta de asignación
                             </button>
                         </div>
                     </div>
@@ -81,8 +81,8 @@
                             <th class="has-text-centered">Código de barras</th>
                             <th class="has-text-centered">Producto</th>
                             <th class="has-text-centered">Cant.</th>
-                            <th class="has-text-centered">Precio</th>
-                            <th class="has-text-centered">Subtotal</th>
+                            <!-- <th class="has-text-centered">Precio</th>
+                            <th class="has-text-centered">Subtotal</th> -->
                             <th class="has-text-centered">Actualizar</th>
                             <th class="has-text-centered">Remover</th>
                         </tr>
@@ -105,8 +105,7 @@
                                     <input class="input sale_input-cant has-text-centered" value="<?php echo $productos['venta_detalle_cantidad']; ?>" id="sale_input_<?php echo str_replace(" ", "_", $productos['producto_codigo']); ?>" type="text" style="max-width: 80px;">
                                 </div>
                             </td>
-                            <td><?php echo MONEDA_SIMBOLO.number_format($productos['venta_detalle_precio_venta'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
-                            <td><?php echo MONEDA_SIMBOLO.number_format($productos['venta_detalle_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
+                            
                             <td>
                                 <button type="button" class="button is-success is-rounded is-small" onclick="actualizar_cantidad('#sale_input_<?php echo str_replace(" ", "_", $productos['producto_codigo']); ?>','<?php echo $productos['producto_codigo']; ?>')" >
                                     <i class="fas fa-redo-alt fa-fw"></i>
@@ -155,7 +154,7 @@
         </div>
 
         <div class="column is-one-quarter">
-            <h2 class="title has-text-centered">Datos de la venta</h2>
+            <h2 class="title has-text-centered">Datos de la Asignación</h2>
             <hr>
 
             <?php if($_SESSION['venta_total']>=0){ ?>
@@ -170,7 +169,7 @@
                     <input class="input" type="date" value="<?php echo date("Y-m-d"); ?>" readonly >
                 </div>
 
-                <label>Caja de ventas <?php echo CAMPO_OBLIGATORIO; ?></label><br>
+                <label>Gerencia del funcionario<?php echo CAMPO_OBLIGATORIO; ?></label><br>
                 <div class="select mb-5">
                     <select name="venta_caja">
                         <?php
@@ -178,9 +177,9 @@
 
                             while($campos_caja=$datos_cajas->fetch()){
                                 if($campos_caja['caja_id']==$_SESSION['caja']){
-                                    echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
+                                    echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Cod. Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
                                 }else{
-                                    echo '<option value="'.$campos_caja['caja_id'].'">Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
+                                    echo '<option value="'.$campos_caja['caja_id'].'">Cod. Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
                                 }
                             }
                         ?>
@@ -188,7 +187,7 @@
                 </div>
                 <br>
 
-                <label>Cliente</label>
+                <label>Funcionario</label>
                 <?php
                     if(isset($_SESSION['datos_cliente_venta']) && count($_SESSION['datos_cliente_venta'])>=1 && $_SESSION['datos_cliente_venta']['cliente_id']!=1){
                 ?>
@@ -252,7 +251,7 @@
 
                 <!-- <?php if($_SESSION['venta_total']>=0){ ?> -->
                 <p class="has-text-centered">
-                    <button type="submit" class="button is-info is-rounded"><i class="far fa-save"></i> &nbsp; Guardar venta</button>
+                    <button type="submit" class="button is-info is-rounded"><i class="far fa-save"></i> &nbsp; Asignar Equipo</button>
                 </p>
                 <!-- <?php } ?> -->
                 <p class="has-text-centered pt-6">
@@ -301,7 +300,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar y agregar cliente</p>
+          <p class="modal-card-title is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar y agregar funcionario</p>
           <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -480,7 +479,7 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Ocurrió un error inesperado',
-                text: 'Debes de introducir el Numero de documento, Nombre, Apellido o Teléfono del cliente',
+                text: 'Debes de introducir el Numero de documento, Nombre, Apellido o Teléfono del funcionario',
                 confirmButtonText: 'Aceptar'
             });
         }
@@ -491,8 +490,8 @@
     function agregar_cliente(id){
 
         Swal.fire({
-            title: '¿Quieres agregar este cliente?',
-            text: "Se va a agregar este cliente para realizar una venta",
+            title: '¿Quieres agregar este funcionario?',
+            text: "Se va a agregar este funcionario para realizar una venta",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -524,8 +523,8 @@
     function remover_cliente(id){
 
         Swal.fire({
-            title: '¿Quieres remover este cliente?',
-            text: "Se va a quitar el cliente seleccionado de la venta",
+            title: '¿Quieres remover este funcionario?',
+            text: "Se va a quitar el funcionario seleccionado de la venta",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

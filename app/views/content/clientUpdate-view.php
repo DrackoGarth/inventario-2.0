@@ -60,20 +60,20 @@
 		<div class="columns">
 		  	<div class="column">
 		    	<div class="control">
-					<label>Estado, provincia o departamento <?php echo CAMPO_OBLIGATORIO; ?></label>
+					<label>Gerencia <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="cliente_provincia" value="<?php echo $datos['cliente_provincia']; ?>" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,30}" maxlength="30" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Ciudad o pueblo <?php echo CAMPO_OBLIGATORIO; ?></label>
+					<label>Cargo <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="cliente_ciudad" value="<?php echo $datos['cliente_ciudad']; ?>" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{4,30}" maxlength="30" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Calle o dirección de casa <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="cliente_direccion" value="<?php echo $datos['cliente_direccion']; ?>" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{4,70}" maxlength="70" required >
+					<label>Piso <?php echo CAMPO_OBLIGATORIO; ?></label>
+				  	<input class="input" type="text" name="cliente_direccion" value="<?php echo $datos['cliente_direccion']; ?>" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,12}" maxlength="70" required >
 				</div>
 		  	</div>
 		</div>
@@ -81,7 +81,7 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Teléfono</label>
-				  	<input class="input" type="text" name="cliente_telefono" value="<?php echo $datos['cliente_telefono']; ?>" pattern="[0-9()+]{8,20}" maxlength="20" >
+				  	<input class="input" type="text" name="cliente_telefono" value="<?php echo $datos['cliente_telefono']; ?>" pattern="[0-9()+]{4,20}" maxlength="20" >
 				</div>
 		  	</div>
 		  	<div class="column">

@@ -181,7 +181,7 @@
 		        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
 		            <thead>
 		                <tr>
-		                    <th class="has-text-centered">Piso</th>
+		                    <th class="has-text-centered">Código</th>
 		                    <th class="has-text-centered">Nombre</th>
 		                   
 		                    <th class="has-text-centered">Actualizar</th>
@@ -247,7 +247,7 @@
 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
-				$tabla.='<p class="has-text-right">Mostrando Areas <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+				$tabla.='<p class="has-text-right">Mostrando Gerencias <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
 
 				$tabla.=$this->paginadorTablas($pagina,$numeroPaginas,$url,7);
 			}
@@ -265,7 +265,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar la caja principal del sistema",
+					"texto"=>"No podemos eliminar la gerencia principal del sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -278,7 +278,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado la caja en el sistema",
+					"texto"=>"No hemos encontrado la gerencia en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -293,7 +293,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar la caja del sistema ya que tiene ventas asociadas",
+					"texto"=>"No podemos eliminar la caja del sistema ya que tiene equipos asociados",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -306,7 +306,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar la caja del sistema ya que tiene usuarios asociados",
+					"texto"=>"No podemos eliminar la gerencia del sistema ya que tiene usuarios asociados",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -319,14 +319,14 @@
 		        $alerta=[
 					"tipo"=>"recargar",
 					"titulo"=>"Caja eliminada",
-					"texto"=>"La caja ".$datos['caja_nombre']." #".$datos['caja_numero']." ha sido eliminada del sistema correctamente",
+					"texto"=>"La gerencia ".$datos['caja_nombre']." #".$datos['caja_numero']." ha sido eliminada del sistema correctamente",
 					"icono"=>"success"
 				];
 		    }else{
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido eliminar la caja ".$datos['caja_nombre']." #".$datos['caja_numero']." del sistema, por favor intente nuevamente",
+					"texto"=>"No hemos podido eliminar la gerencia ".$datos['caja_nombre']." #".$datos['caja_numero']." del sistema, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 		    }
@@ -346,7 +346,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado la caja en el sistema",
+					"texto"=>"No hemos encontrado la gerencia en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -377,7 +377,7 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El Piso del AREA no coincide con el formato solicitado",
+					"texto"=>"El código de la GERENCIA no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -388,7 +388,7 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El NOMBRE DE CAJA no coincide con el formato solicitado",
+					"texto"=>"El NOMBRE DE LA GERENCIA no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -413,7 +413,7 @@
 			    	$alerta=[
 						"tipo"=>"simple",
 						"titulo"=>"Ocurrió un error inesperado",
-						"texto"=>"El número de caja ingresado ya se encuentra registrado en el sistema",
+						"texto"=>"El código de la gerencia ingresado ya se encuentra registrado en el sistema",
 						"icono"=>"error"
 					];
 					return json_encode($alerta);
@@ -428,7 +428,7 @@
 			    	$alerta=[
 						"tipo"=>"simple",
 						"titulo"=>"Ocurrió un error inesperado",
-						"texto"=>"El nombre o código de caja ingresado ya se encuentra registrado en el sistema",
+						"texto"=>"El nombre de la gerencia ingresado ya se encuentra registrado en el sistema",
 						"icono"=>"error"
 					];
 					return json_encode($alerta);
@@ -476,15 +476,15 @@
 			if($this->actualizarDatos("caja",$caja_datos_up,$condicion)){
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"Caja actualizada",
-					"texto"=>"Los datos de la caja ".$datos['caja_nombre']." #".$datos['caja_numero']." se actualizaron correctamente",
+					"titulo"=>"Gerencia actualizada",
+					"texto"=>"Los datos de la Gerencia ".$datos['caja_nombre']." #".$datos['caja_numero']." se actualizaron correctamente",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido actualizar los datos de la caja ".$datos['caja_nombre']." #".$datos['caja_numero'].", por favor intente nuevamente",
+					"texto"=>"No hemos podido actualizar los datos de la gerencia ".$datos['caja_nombre']." #".$datos['caja_numero'].", por favor intente nuevamente",
 					"icono"=>"error"
 				];
 			}

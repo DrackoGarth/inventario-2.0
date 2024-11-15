@@ -82,18 +82,18 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"La CIUDAD O PUEBLO no coincide con el formato solicitado",
+					"texto"=>"La GERENCIA no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
 		        exit();
 		    }
 
-		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{4,70}",$direccion)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,12}",$direccion)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"La DIRECCION O CALLE no coincide con el formato solicitado",
+					"texto"=>"El PISO no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -101,7 +101,7 @@
 		    }
 
 		    if($telefono!=""){
-		    	if($this->verificarDatos("[0-9()+]{8,20}",$telefono)){
+		    	if($this->verificarDatos("[0-9()+]{4,20}",$telefono)){
 			    	$alerta=[
 						"tipo"=>"simple",
 						"titulo"=>"Ocurrió un error inesperado",
@@ -218,15 +218,15 @@
 			if($registrar_cliente->rowCount()==1){
 				$alerta=[
 					"tipo"=>"limpiar",
-					"titulo"=>"Cliente registrado",
-					"texto"=>"El cliente ".$nombre." ".$apellido." se registro con exito",
+					"titulo"=>"Funcionario registrado",
+					"texto"=>"El funcionario ".$nombre." ".$apellido." se registro con éxito",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No se pudo registrar el cliente, por favor intente nuevamente",
+					"texto"=>"No se pudo registrar el funcionario, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 			}
@@ -345,7 +345,7 @@
 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
-				$tabla.='<p class="has-text-right">Mostrando clientes <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+				$tabla.='<p class="has-text-right">Mostrando funcionarios <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
 
 				$tabla.=$this->paginadorTablas($pagina,$numeroPaginas,$url,7);
 			}
@@ -363,7 +363,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar el cliente principal del sistema",
+					"texto"=>"No podemos eliminar el funcionario principal del sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -376,7 +376,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado el cliente en el sistema",
+					"texto"=>"No hemos encontrado el funcionario en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -391,7 +391,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar el cliente del sistema ya que tiene ventas asociadas",
+					"texto"=>"No podemos eliminar el funcionario del sistema ya que tiene equipos asociadas",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -404,8 +404,8 @@
 
 		        $alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"Cliente eliminado",
-					"texto"=>"El cliente ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." ha sido eliminado del sistema correctamente",
+					"titulo"=>"Funcionario eliminado",
+					"texto"=>"El funcionario ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." ha sido eliminado del sistema correctamente",
 					"icono"=>"success"
 				];
 
@@ -413,7 +413,7 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido eliminar el cliente ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." del sistema, por favor intente nuevamente",
+					"texto"=>"No hemos podido eliminar el funcionario ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." del sistema, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 		    }
@@ -433,7 +433,7 @@
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado el cliente en el sistema",
+					"texto"=>"No hemos encontrado el funcionario en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -505,7 +505,7 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El ESTADO, PROVINCIA O DEPARTAMENTO no coincide con el formato solicitado",
+					"texto"=>"La gerencia no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -516,18 +516,18 @@
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"La CIUDAD O PUEBLO no coincide con el formato solicitado",
+					"texto"=>"El cargo no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
 		        exit();
 		    }
 
-		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{4,70}",$direccion)){
+		    if($this->verificarDatos("[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,12}",$direccion)){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"La DIRECCION O CALLE no coincide con el formato solicitado",
+					"texto"=>"El piso no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -535,7 +535,7 @@
 		    }
 
 		    if($telefono!=""){
-		    	if($this->verificarDatos("[0-9()+]{8,20}",$telefono)){
+		    	if($this->verificarDatos("[0-9()+]{4,20}",$telefono)){
 			    	$alerta=[
 						"tipo"=>"simple",
 						"titulo"=>"Ocurrió un error inesperado",
@@ -657,15 +657,15 @@
 			if($this->actualizarDatos("cliente",$cliente_datos_up,$condicion)){
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"Cliente actualizado",
-					"texto"=>"Los datos del cliente ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." se actualizaron correctamente",
+					"titulo"=>"Funcionario actualizado",
+					"texto"=>"Los datos del funcionario ".$datos['cliente_nombre']." ".$datos['cliente_apellido']." se actualizaron correctamente",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido actualizar los datos del cliente ".$datos['cliente_nombre']." ".$datos['cliente_apellido'].", por favor intente nuevamente",
+					"texto"=>"No hemos podido actualizar los datos del funcionario ".$datos['cliente_nombre']." ".$datos['cliente_apellido'].", por favor intente nuevamente",
 					"icono"=>"error"
 				];
 			}
