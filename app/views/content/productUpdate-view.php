@@ -50,18 +50,6 @@
 		  	</div>
 		</div>
 		<div class="columns">
-		  	<div class="column" >
-		    	<div class="control">
-					<label>Precio de compra <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="producto_precio_compra" value="<?php echo $datos['producto_precio_compra']; ?>" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
-				</div>
-		  	</div>
-		  	<div class="column">
-		    	<div class="control">
-					<label>Precio de venta <?php echo CAMPO_OBLIGATORIO; ?></label>
-				  	<input class="input" type="text" name="producto_precio_venta" value="<?php echo $datos['producto_precio_venta']; ?>" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
-				</div>
-		  	</div>
 		  	<div class="column">
 		    	<div class="control">
 					<label>Stock o existencias <?php echo CAMPO_OBLIGATORIO; ?></label>
@@ -82,18 +70,7 @@
 				  	<input class="input" type="text" name="producto_modelo" value="<?php echo $datos['producto_modelo']; ?>" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ().,#\- ]{1,30}" maxlength="30" >
 				</div>
 		  	</div>
-		  	<div class="column">
-		    	<div class="control">
-					<label>Presentación del producto <?php echo CAMPO_OBLIGATORIO; ?></label><br>
-				  	<div class="select">
-					  	<select name="producto_unidad">
-	                        <?php
-	                        	echo $insLogin->generarSelect(PRODUCTO_UNIDAD,$datos['producto_tipo_unidad']);
-	                        ?>
-					  	</select>
-					</div>
-				</div>
-		  	</div>
+		
 		  	<div class="column">
 				<label>Categoría <?php echo CAMPO_OBLIGATORIO; ?></label><br>
 		    	<div class="select">
@@ -112,6 +89,30 @@
                             }
                         ?>
 				  	</select>
+				</div>
+		  	</div>
+			  <div class="column" >
+		    	<div class="control" style="display: none;">
+					<label>Precio de compra <?php echo CAMPO_OBLIGATORIO; ?></label>
+				  	<input class="input" type="text" name="producto_precio_compra" value="<?php echo $datos['producto_precio_compra']; ?>" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
+				</div>
+		  	</div>
+		  	<div class="column">
+		    	<div class="control" style="display: none;">
+					<label>Precio de venta <?php echo CAMPO_OBLIGATORIO; ?></label>
+				  	<input class="input" type="text" name="producto_precio_venta" value="<?php echo $datos['producto_precio_venta']; ?>" pattern="[0-9.]{1,25}" maxlength="25" value="0.00" required >
+				</div>
+		  	</div>
+			  	<div class="column">
+		    	<div class="control" style="display: none;">
+					<label>Presentación del producto <?php echo CAMPO_OBLIGATORIO; ?></label><br>
+				  	<div class="select">
+					  	<select name="producto_unidad">
+	                        <?php
+	                        	echo $insLogin->generarSelect(PRODUCTO_UNIDAD,$datos['producto_tipo_unidad']);
+	                        ?>
+					  	</select>
+					</div>
 				</div>
 		  	</div>
 		</div>

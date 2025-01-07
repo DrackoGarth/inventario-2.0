@@ -72,7 +72,7 @@
 		</div>
 		<div class="columns">
 		  	<div class="column">
-		  		<label>Caja de ventas <?php echo CAMPO_OBLIGATORIO; ?></label><br>
+		  		<label>Gerencia del funcionario <?php echo CAMPO_OBLIGATORIO; ?></label><br>
 				<div class="select">
 				  	<select name="usuario_caja">
                         <?php
@@ -80,9 +80,9 @@
 
                             while($campos_caja=$datos_cajas->fetch()){
                             	if($campos_caja['caja_id']==$datos['caja_id']){
-                            		echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
+                            		echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
                             	}else{
-                                	echo '<option value="'.$campos_caja['caja_id'].'">Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
+                                	echo '<option value="'.$campos_caja['caja_id'].'">Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
                             	}
                             }
                         ?>

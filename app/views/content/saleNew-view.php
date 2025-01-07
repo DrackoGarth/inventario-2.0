@@ -177,9 +177,9 @@
 
                             while($campos_caja=$datos_cajas->fetch()){
                                 if($campos_caja['caja_id']==$_SESSION['caja']){
-                                    echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Cod. Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
+                                    echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
                                 }else{
-                                    echo '<option value="'.$campos_caja['caja_id'].'">Cod. Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
+                                    echo '<option value="'.$campos_caja['caja_id'].'">Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
                                 }
                             }
                         ?>

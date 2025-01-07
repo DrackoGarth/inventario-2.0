@@ -65,7 +65,7 @@
 		$pdf->Ln(7);
 
 		$pdf->SetFont('Arial','',10);
-		$pdf->Cell(12,7,iconv("UTF-8", "ISO-8859-1",'Cajero:'),0,0,'L');
+		$pdf->Cell(14,7,iconv("UTF-8", "ISO-8859-1",'Usuario:'),0,0,'L');
 		$pdf->SetTextColor(97,97,97);
 		$pdf->Cell(134,7,iconv("UTF-8", "ISO-8859-1",$datos_venta['usuario_nombre']." ".$datos_venta['usuario_apellido']),0,0,'L');
 		$pdf->SetFont('Arial','B',10);
@@ -99,7 +99,7 @@
 		}else{
 			$pdf->SetFont('Arial','',10);
 			$pdf->SetTextColor(39,39,51);
-			$pdf->Cell(13,7,iconv("UTF-8", "ISO-8859-1",'Cliente:'),0,0);
+			$pdf->Cell(20,7,iconv("UTF-8", "ISO-8859-1",'Funcionario:'),0,0);
 			$pdf->SetTextColor(97,97,97);
 			$pdf->Cell(60,7,iconv("UTF-8", "ISO-8859-1",$datos_venta['cliente_nombre']." ".$datos_venta['cliente_apellido']),0,0,'L');
 			$pdf->SetTextColor(39,39,51);
@@ -173,7 +173,7 @@
 		$pdf->SetFont('Arial','',9);
 
 		$pdf->SetTextColor(39,39,51);
-		$pdf->MultiCell(0,9,iconv("UTF-8", "ISO-8859-1","*** Precios de productos incluyen impuestos. Para poder realizar un reclamo o devolución debe de presentar esta factura ***"),0,'C',false);
+		// $pdf->MultiCell(0,9,iconv("UTF-8", "ISO-8859-1","*** Precios de productos incluyen impuestos. Para poder realizar un reclamo o devolución debe de presentar esta factura ***"),0,'C',false);
 
 		$pdf->Ln(9);
 

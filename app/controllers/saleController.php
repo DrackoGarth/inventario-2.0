@@ -143,7 +143,7 @@
                     "venta_detalle_descripcion"=>$campos['producto_nombre']
                 ];
 
-                $_SESSION['alerta_producto_agregado']="Se agrego <strong>".$campos['producto_nombre']."</strong> a la venta";
+                $_SESSION['alerta_producto_agregado']="Se agrego <strong>".$campos['producto_nombre']."</strong>";
             }else{
                 $detalle_cantidad=($_SESSION['datos_producto_venta'][$codigo]['venta_detalle_cantidad'])+1;
 
@@ -312,7 +312,7 @@
                     "venta_detalle_descripcion"=>$campos['producto_nombre']
                 ];
 
-                $_SESSION['alerta_producto_agregado']="Se $diferencia_productos <strong>".$campos['producto_nombre']."</strong> a la venta. Total en carrito <strong>$detalle_cantidad</strong>";
+                $_SESSION['alerta_producto_agregado']="Se $diferencia_productos <strong>".$campos['producto_nombre']."</strong> Total en Curso <strong>$detalle_cantidad</strong>";
 
                 $alerta=[
 					"tipo"=>"redireccionar",
