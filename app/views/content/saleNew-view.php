@@ -81,8 +81,7 @@
                             <th class="has-text-centered">Código de barras</th>
                             <th class="has-text-centered">Producto</th>
                             <th class="has-text-centered">Cant.</th>
-                            <!-- <th class="has-text-centered">Precio</th>
-                            <th class="has-text-centered">Subtotal</th> -->
+
                             <th class="has-text-centered">Actualizar</th>
                             <th class="has-text-centered">Remover</th>
                         </tr>

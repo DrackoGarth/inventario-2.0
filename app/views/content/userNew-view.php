@@ -70,7 +70,7 @@
 				</div>
 		  	</div>
 		  	<div class="column">
-		  		<label>Caja de ventas <?php echo CAMPO_OBLIGATORIO; ?></label><br>
+		  		<label>Gerencia <?php echo CAMPO_OBLIGATORIO; ?></label><br>
 				<div class="select">
 				  	<select name="usuario_caja">
 				    	<option value="" selected="" >Seleccione una opción</option>
@@ -78,7 +78,7 @@
                             $datos_cajas=$insLogin->seleccionarDatos("Normal","caja","*",0);
 
                             while($campos_caja=$datos_cajas->fetch()){
-                                echo '<option value="'.$campos_caja['caja_id'].'">Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
+                                echo '<option value="'.$campos_caja['caja_id'].'">Grcia.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
                             }
                         ?>
 				  	</select>
