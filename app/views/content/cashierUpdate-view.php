@@ -1,6 +1,6 @@
 <div class="container is-fluid mb-6">
-	<h1 class="title">Áreas</h1>
-	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar Áreas</h2>
+	<h1 class="title">Gerencias</h1>
+	<h2 class="subtitle"><i class="fas fa-sync-alt"></i> &nbsp; Actualizar Gerencias</h2>
 </div>
 
 <div class="container pb-6 pt-6">
@@ -26,13 +26,13 @@
 		<div class="columns">
 		  	<div class="column">
 		    	<div class="control">
-					<label>Código de la área <?php echo CAMPO_OBLIGATORIO; ?></label>
+					<label>Código de la Gerencia <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="caja_numero" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{1,5}" maxlength="5" value="<?php echo $datos['caja_numero']; ?>" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
-					<label>Nombre de la área <?php echo CAMPO_OBLIGATORIO; ?></label>
+					<label>Nombre de la Gerencia <?php echo CAMPO_OBLIGATORIO; ?></label>
 				  	<input class="input" type="text" name="caja_nombre" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ:# ]{3,70}" maxlength="70" value="<?php echo $datos['caja_nombre']; ?>" required >
 				</div>
 		  	</div>

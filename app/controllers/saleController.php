@@ -347,7 +347,7 @@
 					 </div>
 				    <div class="message-body has-text-centered">
 				    	<i class="fas fa-exclamation-triangle fa-2x"></i><br>
-						Debes de introducir el Numero de documento, Nombre, Apellido o Teléfono del cliente
+						Debes de introducir el Numero de documento, Nombre, Apellido o Teléfono del Funcionario
 				    </div>
 				</article>';
 				exit();
@@ -383,7 +383,7 @@
 					 </div>
 				    <div class="message-body has-text-centered">
 				    	<i class="fas fa-exclamation-triangle fa-2x"></i><br>
-						No hemos encontrado ningún cliente en el sistema que coincida con <strong>“'.$cliente.'”</strong>
+						No hemos encontrado ningún funcionario en el sistema que coincida con <strong>“'.$cliente.'”</strong>
 				    </div>
 				</article>';
 				exit();
@@ -403,7 +403,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido agregar el cliente debido a un error, por favor intente nuevamente",
+					"texto"=>"No hemos podido agregar el funcionario debido a un error, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -423,15 +423,15 @@
 
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"¡Cliente agregado!",
-					"texto"=>"El cliente se agregó para realizar una venta",
+					"titulo"=>"Funcionario agregado!",
+					"texto"=>"El funcionario se agregó para realizar la asignación",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido agregar el cliente debido a un error, por favor intente nuevamente",
+					"texto"=>"No hemos podido agregar el funcionario debido a un error, por favor intente nuevamente",
 					"icono"=>"error"
 				];
             }
@@ -447,15 +447,15 @@
 			if(empty($_SESSION['datos_cliente_venta'])){
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"¡Cliente removido!",
-					"texto"=>"Los datos del cliente se han quitado de la venta",
+					"titulo"=>"Funcionario removido!",
+					"texto"=>"Los datos del funcionario se han quitado de la venta",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido remover el cliente, por favor intente nuevamente",
+					"texto"=>"No hemos podido remover el funcionario, por favor intente nuevamente",
 					"icono"=>"error"
 				];	
 			}
@@ -474,7 +474,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El total pagado por el cliente no coincide con el formato solicitado",
+					"texto"=>"El total pagado por el funcionario no coincide con el formato solicitado",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -485,7 +485,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No ha agregado productos a esta venta",
+					"texto"=>"No ha agregado productos a esta asignación",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -496,7 +496,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No ha seleccionado ningún cliente para realizar esta venta",
+					"texto"=>"No ha seleccionado ningún funcionario para realizar esta asignación",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -510,7 +510,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado el cliente registrado en el sistema",
+					"texto"=>"No hemos encontrado el funcionario registrado en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -524,7 +524,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"La caja no está registrada en el sistema",
+					"texto"=>"La gerencia no está registrada en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
