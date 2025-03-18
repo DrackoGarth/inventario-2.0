@@ -60,12 +60,12 @@
 		$pdf->Cell(116,7,iconv("UTF-8", "ISO-8859-1",date("d/m/Y", strtotime($datos_venta['venta_fecha']))." ".$datos_venta['venta_hora']),0,0,'L');
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetTextColor(39,39,51);
-		$pdf->Cell(35,7,iconv("UTF-8", "ISO-8859-1",strtoupper('Factura Nro.')),0,0,'C');
+		$pdf->Cell(35,7,iconv("UTF-8", "ISO-8859-1",strtoupper('Asignación Nro.')),0,0,'C');
 
 		$pdf->Ln(7);
 
 		$pdf->SetFont('Arial','',10);
-		$pdf->Cell(14,7,iconv("UTF-8", "ISO-8859-1",'Usuario:'),0,0,'L');
+		$pdf->Cell(14,7,iconv("UTF-8", "ISO-8859-1",'Asignado por:'),0,5,'L');
 		$pdf->SetTextColor(97,97,97);
 		$pdf->Cell(134,7,iconv("UTF-8", "ISO-8859-1",$datos_venta['usuario_nombre']." ".$datos_venta['usuario_apellido']),0,0,'L');
 		$pdf->SetFont('Arial','B',10);
@@ -115,7 +115,7 @@
 			$pdf->Ln(7);
 
 			$pdf->SetTextColor(39,39,51);
-			$pdf->Cell(6,7,iconv("UTF-8", "ISO-8859-1",'Dir:'),0,0);
+			$pdf->Cell(6,7,iconv("UTF-8", "ISO-8859-1",'Gcia, Cargo, Piso:'),0,5);
 			$pdf->SetTextColor(97,97,97);
 			$pdf->Cell(109,7,iconv("UTF-8", "ISO-8859-1",$datos_venta['cliente_provincia'].", ".$datos_venta['cliente_ciudad'].", ".$datos_venta['cliente_direccion']),0,0);
 		}

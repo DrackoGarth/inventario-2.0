@@ -490,7 +490,7 @@
 
         Swal.fire({
             title: '¿Quieres agregar este funcionario?',
-            text: "Se va a agregar este funcionario para realizar una venta",
+            text: "Se va a agregar este funcionario para realizar una asignación",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -523,7 +523,7 @@
 
         Swal.fire({
             title: '¿Quieres remover este funcionario?',
-            text: "Se va a quitar el funcionario seleccionado de la venta",
+            text: "Se va a quitar el funcionario seleccionado de la asignación",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

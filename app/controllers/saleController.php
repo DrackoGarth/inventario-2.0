@@ -199,7 +199,7 @@
 				$alerta=[
 					"tipo"=>"recargar",
 					"titulo"=>"¡Producto removido!",
-					"texto"=>"El producto se ha removido de la venta",
+					"texto"=>"El producto se ha removido de la asignación",
 					"icono"=>"success"
 				];
 				
@@ -324,7 +324,7 @@
                 $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado el producto que desea actualizar en el carrito",
+					"texto"=>"No hemos encontrado el producto que desea actualizar en la carta",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -448,7 +448,7 @@
 				$alerta=[
 					"tipo"=>"recargar",
 					"titulo"=>"Funcionario removido!",
-					"texto"=>"Los datos del funcionario se han quitado de la venta",
+					"texto"=>"Los datos del funcionario se han quitado de la asignación",
 					"icono"=>"success"
 				];
 			}else{
